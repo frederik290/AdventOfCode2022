@@ -5,7 +5,6 @@ void Main()
 	var input = AoC2022.GetInputLines(2);
 	One(input);
 	Two(input);	
-	
 }
 
 void One(string[] input)
