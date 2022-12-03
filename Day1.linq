@@ -2,7 +2,7 @@
 
 void Main()
 {
-	var input = CoA2022.GetInputLines(1);
+	var input = AoC2022.GetInputLines(1);
 	One(input);
 	Two(input);
 	
