@@ -7,21 +7,17 @@ void Main()
 	Two(input);	
 }
 
-void One(string[] input)
-{
-	var totalScore = 0;
-	foreach (var line in input)
-		totalScore += outcomes[line];
-	totalScore.Dump();
-}
+void One(string[] input) => 
+	GetTotalScore(input, outcomes)
+	.Dump("Total score according to game plan");
 
-void Two(string[] input)
-{
-	var totalScore = 0;
-	foreach (var line in input)
-		totalScore += strategies[line];
-	totalScore.Dump();
-}
+
+void Two(string[] input) =>
+	GetTotalScore(input, strategies)
+	.Dump("Total score according to strategy");
+
+int GetTotalScore(string[] input, Dictionary<string, int> resultMap) => 
+	input.Sum(l => resultMap[l]);
 
 static Dictionary<string, int> outcomes = new Dictionary<string, int>()
 {
@@ -53,7 +49,3 @@ Dictionary<string, int> strategies = new Dictionary<string, int>()
 	{"C Y", outcomes["C Z"]}, // scissors, draw 
 	{"C Z", outcomes["C X"]}  // scissors, win 
 };
-
-
-
-

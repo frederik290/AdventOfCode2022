@@ -20,7 +20,7 @@ void One()
 
 void Two()
 {
-	var coveredRanges = from line in AoC2022.GetInputLines(4)
+	var overlappingPairs = from line in AoC2022.GetInputLines(4)
 						let p = line.Split(new[] { '-', ',' })
 								.Select(int.Parse).ToArray()
 						let r1 = Enumerable.Range(p[0], p[1]-p[0]+1)
@@ -28,6 +28,6 @@ void Two()
 						where r1.Intersect(r2).Any()
 						select p;
 
-	coveredRanges.Count().Dump("Overlapping pairs");
+	overlappingPairs.Count().Dump("Overlapping pairs");
 	
 }
